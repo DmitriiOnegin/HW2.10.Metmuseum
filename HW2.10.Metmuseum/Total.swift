@@ -1,0 +1,17 @@
+//
+//  Total.swift
+//  HW2.10.Metmuseum
+//
+//  Created by Dmitrii Onegin on 16.01.2022.
+//
+
+import Foundation
+
+struct Total: Decodable {
+    let total: Int
+    let objectIDs: [Int]
+    
+    static func getTotal() -> Total{
+        Total(total: 10, objectIDs: [1,2,3,4,5,6,7,8,9,10])
+    }
+}
