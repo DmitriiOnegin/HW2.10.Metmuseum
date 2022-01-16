@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mdy-nK-nsJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oqQ-WP-I6O">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
             <objects>
                 <tableViewController id="4VD-cL-Fkh" customClass="MainTableViewController" customModule="HW2_10_Metmuseum" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="i99-CX-xmk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -45,12 +46,65 @@
             </objects>
             <point key="canvasLocation" x="547.82608695652175" y="110.49107142857143"/>
         </scene>
+        <!--Start View Controller-->
+        <scene sceneID="FAZ-oR-JYp">
+            <objects>
+                <viewController id="oqQ-WP-I6O" customClass="StartViewController" customModule="HW2_10_Metmuseum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fkR-Pb-08t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Metropolitan Museum of Art" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctB-Da-eMU">
+                                <rect key="frame" x="20" y="194" width="374" height="69.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odS-p7-9Gh">
+                                <rect key="frame" x="20" y="603" width="374" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="VQ4-sD-M1x"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Загрузить список объектов музея"/>
+                                <connections>
+                                    <action selector="loadButton" destination="oqQ-WP-I6O" eventType="touchUpInside" id="Gc4-jX-X7t"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fAS-wg-SBh">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LjH-dU-seK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LjH-dU-seK" firstAttribute="trailing" secondItem="ctB-Da-eMU" secondAttribute="trailing" constant="20" id="643-gp-scL"/>
+                            <constraint firstItem="LjH-dU-seK" firstAttribute="trailing" secondItem="odS-p7-9Gh" secondAttribute="trailing" constant="20" id="AVU-d7-i3L"/>
+                            <constraint firstItem="ctB-Da-eMU" firstAttribute="top" secondItem="LjH-dU-seK" secondAttribute="top" constant="150" id="B8m-WQ-oJK"/>
+                            <constraint firstItem="fAS-wg-SBh" firstAttribute="centerY" secondItem="fkR-Pb-08t" secondAttribute="centerY" id="OpC-2R-f5S"/>
+                            <constraint firstItem="LjH-dU-seK" firstAttribute="bottom" secondItem="odS-p7-9Gh" secondAttribute="bottom" constant="228" id="dgp-sT-ND8"/>
+                            <constraint firstItem="ctB-Da-eMU" firstAttribute="leading" secondItem="LjH-dU-seK" secondAttribute="leading" constant="20" id="fTd-rF-8Mz"/>
+                            <constraint firstItem="fAS-wg-SBh" firstAttribute="centerX" secondItem="fkR-Pb-08t" secondAttribute="centerX" id="lLp-Nq-vIr"/>
+                            <constraint firstItem="odS-p7-9Gh" firstAttribute="leading" secondItem="LjH-dU-seK" secondAttribute="leading" constant="20" id="mbI-9m-esN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonLabel" destination="odS-p7-9Gh" id="YMU-du-9gh"/>
+                        <outlet property="loadingLabel" destination="fAS-wg-SBh" id="GIG-mS-niJ"/>
+                        <segue destination="mdy-nK-nsJ" kind="show" identifier="mainSigvey" id="X6A-sA-dP4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3be-Bq-Vzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1126.0869565217392" y="109.82142857142857"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GG3-wG-Wxx">
             <objects>
                 <navigationController id="mdy-nK-nsJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Vd6-w2-FIe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="wBv-hk-xxq">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

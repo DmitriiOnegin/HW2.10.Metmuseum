@@ -9,17 +9,11 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
     
-    var total = Total.getTotal()
+    var total: Total!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NetworkingManager.shared.fetchTotalObjects(url: Link.totalApi.rawValue) { total in
-            self.total = total
-            self.title = " В MetMuseum \(self.total.total) экспонатов"
-            self.tableView.reloadData()
-            
-        }
+        self.title = " В MetMuseum \(self.total.total) экспонатов"
     }
 
     // MARK: - Table view data source
@@ -62,14 +56,15 @@ class MainTableViewController: UITableViewController {
     */
 
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let obgectVC = segue.destination as? ObjectViewController else { return }
+//                guard let indexPath = tableView.indexPathForSelectedRow else { return }
+//        obgectVC.objectID = total.objectIDs[indexPath.row]
+//        
+//    }
+   
 
 }

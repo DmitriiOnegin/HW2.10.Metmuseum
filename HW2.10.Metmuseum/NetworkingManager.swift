@@ -32,55 +32,6 @@ class NetworkingManager {
             } catch {
                 print(error.localizedDescription)
             }
-
         }.resume()
     }
-    
-    func fetchObject(url: String, complition: @escaping(_ object: Object, _ image: UIImage ) -> Void) {
-        
-        guard let url = URL(string: url) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                let object = try JSONDecoder().decode(Object.self, from: data)
-                
-                self.fetchImage(url: object.primaryImage) { image in
-                    
-                DispatchQueue.main.async {
-                    complition(object, image)
-                    print("total: \(object.title)")
-                    print(object.culture)
-                }
-                
-            }
-                
-            } catch {
-                print(error.localizedDescription)
-            }
-
-        }.resume()
-    }
-    
-    private func fetchImage(url: String, complition: @escaping(_ image: UIImage) -> Void) {
-        guard let url = URL(string: url) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            guard let image = UIImage(data: data) else { return }
-            
-           // DispatchQueue.main.async {
-                complition(image)
-          //  }
-
-        }.resume()
-    }
-
 }

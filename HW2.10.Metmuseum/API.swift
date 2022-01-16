@@ -9,5 +9,4 @@ import Foundation
 
 enum Link: String {
     case totalApi = "https://collectionapi.metmuseum.org/public/collection/v1/objects"
-    case objectApi = "https://collectionapi.metmuseum.org/public/collection/v1/objects/"
 }

@@ -16,8 +16,7 @@
 		1910F07827941654006A1637 /* Total.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910F07727941654006A1637 /* Total.swift */; };
 		1910F07A279416B8006A1637 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910F079279416B8006A1637 /* NetworkingManager.swift */; };
 		1910F07C27941821006A1637 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910F07B27941821006A1637 /* API.swift */; };
-		1910F07E27942556006A1637 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910F07D27942556006A1637 /* Object.swift */; };
-		1910F0802794396B006A1637 /* ObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910F07F2794396B006A1637 /* ObjectViewController.swift */; };
+		1910F0822794621D006A1637 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1910F0812794621D006A1637 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +31,7 @@
 		1910F07727941654006A1637 /* Total.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Total.swift; sourceTree = "<group>"; };
 		1910F079279416B8006A1637 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		1910F07B27941821006A1637 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		1910F07D27942556006A1637 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
-		1910F07F2794396B006A1637 /* ObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewController.swift; sourceTree = "<group>"; };
+		1910F0812794621D006A1637 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +66,9 @@
 			children = (
 				1910F061279414CA006A1637 /* AppDelegate.swift */,
 				1910F063279414CA006A1637 /* SceneDelegate.swift */,
+				1910F0812794621D006A1637 /* StartViewController.swift */,
 				1910F075279415A0006A1637 /* MainTableViewController.swift */,
-				1910F07F2794396B006A1637 /* ObjectViewController.swift */,
 				1910F07727941654006A1637 /* Total.swift */,
-				1910F07D27942556006A1637 /* Object.swift */,
 				1910F079279416B8006A1637 /* NetworkingManager.swift */,
 				1910F07B27941821006A1637 /* API.swift */,
 				1910F067279414CA006A1637 /* Main.storyboard */,
@@ -154,10 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1910F062279414CA006A1637 /* AppDelegate.swift in Sources */,
+				1910F0822794621D006A1637 /* StartViewController.swift in Sources */,
 				1910F076279415A0006A1637 /* MainTableViewController.swift in Sources */,
 				1910F07827941654006A1637 /* Total.swift in Sources */,
-				1910F0802794396B006A1637 /* ObjectViewController.swift in Sources */,
-				1910F07E27942556006A1637 /* Object.swift in Sources */,
 				1910F07A279416B8006A1637 /* NetworkingManager.swift in Sources */,
 				1910F07C27941821006A1637 /* API.swift in Sources */,
 				1910F064279414CA006A1637 /* SceneDelegate.swift in Sources */,
