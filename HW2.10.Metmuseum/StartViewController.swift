@@ -17,7 +17,6 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingLabel.isHidden = true
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -26,30 +25,21 @@ class StartViewController: UIViewController {
         mainVC.total = total
     }
     
-    
     @IBAction func loadButton() {
+        if total.total == Total.getTotal().total {
         NetworkingManager.shared.fetchTotalObjects(url: Link.totalApi.rawValue) { total in
             self.total = total
             self.loadingLabel.stopAnimating()
             self.loadingLabel.isHidden = true
+            self.buttonLabel.setTitle("Посмотреть список объектов", for: .normal)
+            self.buttonLabel.isHidden = false
             self.performSegue(withIdentifier: "mainSigvey", sender: nil)
         }
         loadingLabel.isHidden = false
         loadingLabel.startAnimating()
         buttonLabel.isHidden = true
-      //  performSegue(withIdentifier: "mainSigvey", sender: nil)
+        } else {
+            performSegue(withIdentifier: "mainSigvey", sender: nil)
+        }
     }
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

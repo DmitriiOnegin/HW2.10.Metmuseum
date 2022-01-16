@@ -71,8 +71,9 @@
                                     <action selector="loadButton" destination="oqQ-WP-I6O" eventType="touchUpInside" id="Gc4-jX-X7t"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fAS-wg-SBh">
-                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fAS-wg-SBh">
+                                <rect key="frame" x="197" y="608" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LjH-dU-seK"/>
@@ -81,10 +82,8 @@
                             <constraint firstItem="LjH-dU-seK" firstAttribute="trailing" secondItem="ctB-Da-eMU" secondAttribute="trailing" constant="20" id="643-gp-scL"/>
                             <constraint firstItem="LjH-dU-seK" firstAttribute="trailing" secondItem="odS-p7-9Gh" secondAttribute="trailing" constant="20" id="AVU-d7-i3L"/>
                             <constraint firstItem="ctB-Da-eMU" firstAttribute="top" secondItem="LjH-dU-seK" secondAttribute="top" constant="150" id="B8m-WQ-oJK"/>
-                            <constraint firstItem="fAS-wg-SBh" firstAttribute="centerY" secondItem="fkR-Pb-08t" secondAttribute="centerY" id="OpC-2R-f5S"/>
                             <constraint firstItem="LjH-dU-seK" firstAttribute="bottom" secondItem="odS-p7-9Gh" secondAttribute="bottom" constant="228" id="dgp-sT-ND8"/>
                             <constraint firstItem="ctB-Da-eMU" firstAttribute="leading" secondItem="LjH-dU-seK" secondAttribute="leading" constant="20" id="fTd-rF-8Mz"/>
-                            <constraint firstItem="fAS-wg-SBh" firstAttribute="centerX" secondItem="fkR-Pb-08t" secondAttribute="centerX" id="lLp-Nq-vIr"/>
                             <constraint firstItem="odS-p7-9Gh" firstAttribute="leading" secondItem="LjH-dU-seK" secondAttribute="leading" constant="20" id="mbI-9m-esN"/>
                         </constraints>
                     </view>
