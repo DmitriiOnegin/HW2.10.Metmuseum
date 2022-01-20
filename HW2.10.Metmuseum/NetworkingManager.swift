@@ -33,8 +33,6 @@ class NetworkingManager {
                 let total = try JSONDecoder().decode(Total.self, from: data)
                 DispatchQueue.main.async {
                     complition(total)
-//                    print("total: \(total.total)")
-//                    print(total.objectIDs.count)
                 }
             } catch {
                 print(error.localizedDescription)

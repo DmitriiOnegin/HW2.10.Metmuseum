@@ -22,15 +22,13 @@ struct Total: Decodable {
         
     }
     
-    static func getTotal(from value: Any) -> Total {
-        guard let totalData = value as? [String: Any] else { return Total.getTotal() }
-
-            let total = Total(totalData: totalData)
-            
-        return total
-    }
-    
     static func getTotal() -> Total{
         Total(total: 10, objectIDs: [1,2,3,4,5,6,7,8,9,10])
     }
+    
+    static func getTotal(from value: Any) -> Total {
+        guard let totalData = value as? [String: Any] else { return Total.getTotal() }
+        return Total(totalData: totalData)
+    }
+    
 }
