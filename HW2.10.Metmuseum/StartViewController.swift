@@ -27,14 +27,28 @@ class StartViewController: UIViewController {
     
     @IBAction func loadButton() {
         if total.total == Total.getTotal().total {
-        NetworkingManager.shared.fetchTotalObjects(url: Link.totalApi.rawValue) { total in
-            self.total = total
-            self.loadingLabel.stopAnimating()
-            self.loadingLabel.isHidden = true
-            self.buttonLabel.setTitle("Посмотреть список объектов", for: .normal)
-            self.buttonLabel.isHidden = false
-            self.performSegue(withIdentifier: "mainSigvey", sender: nil)
-        }
+//        NetworkingManager.shared.fetchTotalObjects(url: Link.totalApi.rawValue) { total in
+//            self.total = total
+//            self.loadingLabel.stopAnimating()
+//            self.loadingLabel.isHidden = true
+//            self.buttonLabel.setTitle("Посмотреть список объектов", for: .normal)
+//            self.buttonLabel.isHidden = false
+//            self.performSegue(withIdentifier: "mainSigvey", sender: nil)
+//        }
+            NetworkingManager.shared.fetchDataWithAlomafire(Link.totalApi.rawValue) { result in
+                switch result {
+                case .success(let total):
+                    self.total = total
+                    self.loadingLabel.stopAnimating()
+                    self.loadingLabel.isHidden = true
+                    self.buttonLabel.setTitle("Посмотреть список объектов", for: .normal)
+                    self.buttonLabel.isHidden = false
+                    self.performSegue(withIdentifier: "mainSigvey", sender: nil)
+                case .failure(let error):
+                    print(error)
+                }
+                
+            }
         loadingLabel.isHidden = false
         loadingLabel.startAnimating()
         buttonLabel.isHidden = true

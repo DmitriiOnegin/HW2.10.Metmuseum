@@ -7,6 +7,13 @@
 
 import Foundation
 import UIKit
+import Alamofire
+
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
 
 class NetworkingManager {
     static var shared = NetworkingManager()
@@ -26,12 +33,26 @@ class NetworkingManager {
                 let total = try JSONDecoder().decode(Total.self, from: data)
                 DispatchQueue.main.async {
                     complition(total)
-                    print("total: \(total.total)")
-                    print(total.objectIDs.count)
+//                    print("total: \(total.total)")
+//                    print(total.objectIDs.count)
                 }
             } catch {
                 print(error.localizedDescription)
             }
         }.resume()
+    }
+    
+    func fetchDataWithAlomafire(_ url: String, completion: @escaping(Result<Total, NetworkError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let total = Total.getTotal(from: value)
+                    completion(.success(total))
+                case .failure:
+                    completion(.failure(.decodingError))
+                }
+            }
     }
 }
